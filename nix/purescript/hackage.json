@@ -1,0 +1,592 @@
+[
+ {
+  "name": "Glob",
+  "version": "0.10.2",
+  "sha256": "6af672ac8427d35cbd42d64142dc288feab266f0be92dae3c696e8860d8173c0"
+ },
+ {
+  "name": "HUnit",
+  "version": "1.6.2.0",
+  "sha256": "b0b7538871ffc058486fc00740886d2f3172f8fa6869936bfe83a5e10bd744ab"
+ },
+ {
+  "name": "OneTuple",
+  "version": "0.4.2.1",
+  "sha256": "c504132551e9c8f5afe6c8c8d5bf1ed208f4da98b0cb4af59400bd9bd836e03e"
+ },
+ {
+  "name": "QuickCheck",
+  "version": "2.18.0.0",
+  "sha256": "fd8462ad3b1c3bb90465ec581356cf5214673c1015d73f28f2e7a3df179bbc55"
+ },
+ {
+  "name": "StateVar",
+  "version": "1.2.2",
+  "sha256": "5e4b39da395656a59827b0280508aafdc70335798b50e5d6fd52596026251825"
+ },
+ {
+  "name": "adjunctions",
+  "version": "4.4.4",
+  "sha256": "21408d9bd3c74331b557ce86281e592f56466e19d2a7e3f37e4065203a663145"
+ },
+ {
+  "name": "aeson",
+  "version": "2.2.4.1",
+  "sha256": "4071f1aa7cf4fbe6c8887d24ed2fbd57b2744114994b035616ce620b7c02fa60"
+ },
+ {
+  "name": "aeson-better-errors",
+  "version": "0.9.1.3",
+  "sha256": "6690d5d9be95eac69f1441b6c81e218934108ffaa8bc8acbff3e069f83ba56cb"
+ },
+ {
+  "name": "alex",
+  "version": "3.5.4.2",
+  "sha256": "df481dc960e2c59a30395f7335031fd4ef8773b8a42894a4f2320e00ff474418"
+ },
+ {
+  "name": "ansi-terminal",
+  "version": "1.1.5",
+  "sha256": "9cf083cef2e2ba88a425f132c8a82bfa931eb4b0c38232b2017f8fcea2e23073"
+ },
+ {
+  "name": "ansi-terminal-types",
+  "version": "1.1.3",
+  "sha256": "9fc9ce2157f1889bd99a4d22c9f1c64589590be0f797c3efe71c8fa17a11a689"
+ },
+ {
+  "name": "assoc",
+  "version": "1.1.1",
+  "sha256": "231149b7fef09f5dd95af51228615e3b296dbd0faadeca053e0644a4b13b0ff6"
+ },
+ {
+  "name": "async",
+  "version": "2.2.6",
+  "sha256": "148571bc188003101241da6c49131d07324e63a88ed283a84def2e9694599619"
+ },
+ {
+  "name": "attoparsec",
+  "version": "0.14.4",
+  "sha256": "3f337fe58624565de12426f607c23e60c7b09c86b4e3adfc827ca188c9979e6c"
+ },
+ {
+  "name": "base-compat",
+  "version": "0.15.0",
+  "sha256": "59aa49d7779a20a808924690583653c2bdfb0e54b5162df80df5a81632824531"
+ },
+ {
+  "name": "base-orphans",
+  "version": "0.9.4",
+  "sha256": "08cc283a31350f7bd28b2a5d31af693ee337f2593d3e7222999b72dd4954c72b"
+ },
+ {
+  "name": "base16-bytestring",
+  "version": "1.0.2.0",
+  "sha256": "1d5a91143ef0e22157536093ec8e59d226a68220ec89378d5dcaeea86472c784"
+ },
+ {
+  "name": "base64-bytestring",
+  "version": "1.2.1.0",
+  "sha256": "fbf8ed30edde271eb605352021431d8f1b055f95a56af31fe2eacf6bdfdc49c9"
+ },
+ {
+  "name": "bifunctors",
+  "version": "5.6.3",
+  "sha256": "ad7a357f022f4c780c505040d73f1c06a4fd697b4a0bab6123bbd73b55d8115c"
+ },
+ {
+  "name": "blaze-builder",
+  "version": "0.4.4.1",
+  "sha256": "971d360428ac97af9a4e55e4f2c23649f6cedc0ce5d6e94d520e663f33ea5113"
+ },
+ {
+  "name": "blaze-html",
+  "version": "0.9.2.0",
+  "sha256": "65542ef39f7644a3d76afcadeb976d3e334c6947516b7313fcb59165cea1608f"
+ },
+ {
+  "name": "blaze-markup",
+  "version": "0.8.3.0",
+  "sha256": "8606ac8b4a1f7f8f1bbc0770b2752e9b6f88ccc9fbdcbb33aa20577d0e5930e8"
+ },
+ {
+  "name": "boring",
+  "version": "0.2.2",
+  "sha256": "928baf1fff69b17658fb7014a1cc3e220b3b69b52271ae9c0452f82d67b3ef86"
+ },
+ {
+  "name": "bower-json",
+  "version": "1.1.0.0",
+  "sha256": "d435ffe94a774c1a4a262b6c17971cb38a3fe69c9f99c52c8b168db7e363d052"
+ },
+ {
+  "name": "boxes",
+  "version": "0.1.5",
+  "sha256": "38e1782e8a458f342a0acbb74af8f55cb120756bc3af7ee7220d955812af56c3"
+ },
+ {
+  "name": "call-stack",
+  "version": "0.4.0",
+  "sha256": "430bcf8a3404f7e55319573c0b807b1356946f0c8f289bb3d9afb279c636b87b"
+ },
+ {
+  "name": "character-ps",
+  "version": "0.1",
+  "sha256": "22de71fde38b236d3e9168a832b5e1e75d1fb4f4028667bdf747b3b4c8c1529c"
+ },
+ {
+  "name": "clock",
+  "version": "0.8.4",
+  "sha256": "6ae9898afe788a5e334cd5fad5d18a3c2e8e59fa09aaf7b957dbb38a4767df2e"
+ },
+ {
+  "name": "colour",
+  "version": "2.3.7",
+  "sha256": "1f3b1055675abe4e3362800cc9bf7ab9b92dfdf21a1f6c82b252611270be9680"
+ },
+ {
+  "name": "comonad",
+  "version": "5.0.10",
+  "sha256": "e9739df2bf5944958062a4ea73bde3bf35c0879cee0944edf7f05bebf993f9c1"
+ },
+ {
+  "name": "constraints",
+  "version": "0.14.4",
+  "sha256": "808021e217c39eb4aaa76cf85abf43f4e5bf4396143d86bb2275068dd8bb6d39"
+ },
+ {
+  "name": "contravariant",
+  "version": "1.5.6",
+  "sha256": "65f3260354ee5fd1f2c7ffc54cff99d22b794c254f053734979ad37820e6efe3"
+ },
+ {
+  "name": "css-text",
+  "version": "0.1.3.0",
+  "sha256": "5ff507bf3863219f41e7f2d215e5511fe15ee13d1e28bd3ee64e0b0b894bcd7a"
+ },
+ {
+  "name": "data-default",
+  "version": "0.8.0.2",
+  "sha256": "fa7d5de70ccef7381a7f17cd64948de1c24b620de13e1cd55c36c26949870799"
+ },
+ {
+  "name": "data-fix",
+  "version": "0.3.4",
+  "sha256": "8df052d18c047ab9e9200536a8799b5af3997ebecbbb091a7384b6be8416ab37"
+ },
+ {
+  "name": "data-ordlist",
+  "version": "0.4.7.0",
+  "sha256": "6f6c1e7a9a9155ad78ca78cb9abd6f7e2e1c78b3e549b179dc0874e6428f490d"
+ },
+ {
+  "name": "distributive",
+  "version": "0.6.3",
+  "sha256": "aeeb028a23db9f9b073e24a6bd766b79b9d58c2b407b06bf33296c27e9264baa"
+ },
+ {
+  "name": "dlist",
+  "version": "1.0",
+  "sha256": "173d637328bb173fcc365f30d29ff4a94292a1e0e5558aeb3dfc11de81510115"
+ },
+ {
+  "name": "edit-distance",
+  "version": "0.2.2.1",
+  "sha256": "3e8885ee2f56ad4da940f043ae8f981ee2fe336b5e8e4ba3f7436cff4f526c4a"
+ },
+ {
+  "name": "file-embed",
+  "version": "0.0.16.0",
+  "sha256": "5f18672eff936355557cdd163905451205d7ee22742edac313dd27cf42a3f415"
+ },
+ {
+  "name": "free",
+  "version": "5.2",
+  "sha256": "72867f7c89173263765736e8d395e94291f1aaea626ecb1d673d72ce90b94f89"
+ },
+ {
+  "name": "generic-random",
+  "version": "1.5.0.1",
+  "sha256": "dd3451808788d99211edeac27287db5417e97234ce9221a2eb9ab02e9cfc2c0a"
+ },
+ {
+  "name": "gitrev",
+  "version": "1.3.1",
+  "sha256": "a89964db24f56727b0e7b10c98fe7c116d721d8c46f52d6e77088669aaa38332"
+ },
+ {
+  "name": "half",
+  "version": "0.3.3",
+  "sha256": "f476049628d6ff79722fb073c01e85f2a11b2ef3835fdc3fc21a61f05d17ab02"
+ },
+ {
+  "name": "happy",
+  "version": "2.2",
+  "sha256": "2e9345c99a61bc29b5a1b9d5c1ea791cbea219499a4c01ed71f33c3af34a5eb0"
+ },
+ {
+  "name": "happy-lib",
+  "version": "2.2",
+  "sha256": "d2e0662b12b52008787c380b94acd4f6ed0a0af04bb0d433ed8c4ac00f1e3003"
+ },
+ {
+  "name": "hashable",
+  "version": "1.5.1.0",
+  "sha256": "ed0b7c10ce92c9ffe45420dadc38c6d39db486ff3633ff13567cc9f75f79b112"
+ },
+ {
+  "name": "haskell-lexer",
+  "version": "1.2.1",
+  "sha256": "9d76e1528106b1b32e6e465264e39381ca4b450b72a4b5331e7e5127640a1a41"
+ },
+ {
+  "name": "hsc2hs",
+  "version": "0.68.10",
+  "sha256": "6f4e34d788fe2ca7091ee0a10307ee8a7c060a1ba890f2bffad16a7d4d5cef76"
+ },
+ {
+  "name": "hspec",
+  "version": "2.11.17",
+  "sha256": "39e4c8c3bb2be08a4c61747ddff0365c6a07efc6185b3a80a7b88fbb6bec9756"
+ },
+ {
+  "name": "hspec-core",
+  "version": "2.11.17",
+  "sha256": "84b5176a525cb0df98070440201220814517b5d51e6fd15a52c0bc79da3b8a85"
+ },
+ {
+  "name": "hspec-discover",
+  "version": "2.11.17",
+  "sha256": "356c9d8df78df3033348be617ddf408914a41dd87c12b5ed787b0480face4652"
+ },
+ {
+  "name": "hspec-expectations",
+  "version": "0.8.4",
+  "sha256": "7b8dde7e230ecfda90c95fd80478b244a45e68602fb3dd4a76f4710619be21ff"
+ },
+ {
+  "name": "indexed-traversable",
+  "version": "0.1.4",
+  "sha256": "58be09afdf3ad5a25c2aa0d2a7df80d602df09f4e76d3abf2b7cdb0e75d03b22"
+ },
+ {
+  "name": "indexed-traversable-instances",
+  "version": "0.1.2.1",
+  "sha256": "e69d41f23a95463c2e03aee03374a4f489c72f7bf235be251499c4cca9411fec"
+ },
+ {
+  "name": "integer-conversion",
+  "version": "0.1.1",
+  "sha256": "c18164a048073310f6353ebc64c9037b52a4b8299963ce05e027bcf60e22155a"
+ },
+ {
+  "name": "integer-logarithms",
+  "version": "1.0.5",
+  "sha256": "66dff6f1f778fe1ec689139fe125cd4e6a95643734c651c891eafa2c50669459"
+ },
+ {
+  "name": "invariant",
+  "version": "0.6.5",
+  "sha256": "626bdec7c925fb0f15896dcc776992cb00a5fcf99211528c13e7535e72396e3a"
+ },
+ {
+  "name": "kan-extensions",
+  "version": "5.2.8",
+  "sha256": "f76daa44a80d423c849d5fb552e2a20b1e2f47b638c889a34cb1a5bd1ab08d21"
+ },
+ {
+  "name": "language-javascript",
+  "version": "0.7.1.0",
+  "sha256": "d1a036aa4c747fa7a347e78dc6d3609a3d51dc28580ff6b897a27646ca7ad168"
+ },
+ {
+  "name": "lens",
+  "version": "5.3.6",
+  "sha256": "d345dcf1fda4d4a127b84d42638b62f783cf52750bd8fd14ab1637510c1023c2"
+ },
+ {
+  "name": "lifted-async",
+  "version": "0.11.0",
+  "sha256": "2e52e997b44e8a850fae925aa7160510c287b15a90fb4c0385c25f4302083288"
+ },
+ {
+  "name": "lifted-base",
+  "version": "0.2.3.12",
+  "sha256": "c134a95f56750aae806e38957bb03c59627cda16034af9e00a02b699474317c5"
+ },
+ {
+  "name": "monad-control",
+  "version": "1.0.3.1",
+  "sha256": "ae0baea04d99375ef788140367179994a7178d400a8ce0d9026846546772713c"
+ },
+ {
+  "name": "monoidal-containers",
+  "version": "0.6.7.0",
+  "sha256": "3b0f6f46b47bd6643bdf32e9aa10303dc0145428cbd6b019bdd48398c07affc1"
+ },
+ {
+  "name": "mtl-compat",
+  "version": "0.2.2",
+  "sha256": "1955398fe2115674f47f553b2caaf928c6aa3424271a5cd13bc191e54bfe3a9e"
+ },
+ {
+  "name": "network",
+  "version": "3.2.8.0",
+  "sha256": "51788e5eeb7d77264f260acd48df8055a4dbc2477e8d634a8493677bb15c5fc8"
+ },
+ {
+  "name": "network-uri",
+  "version": "2.6.4.2",
+  "sha256": "9c188973126e893250b881f20e8811dca06c223c23402b06f7a1f2e995797228"
+ },
+ {
+  "name": "newtype",
+  "version": "0.2.2.1",
+  "sha256": "7bf0c71d2030de67efb0c5bb17eb4050ab2ca1ef5aa1d49c011bb827f2c97c6a"
+ },
+ {
+  "name": "optparse-applicative",
+  "version": "0.19.0.0",
+  "sha256": "cf16aeefd821730c7738447fa7c6b7ada7ca1c9cc25400d64ef283294d345871"
+ },
+ {
+  "name": "parallel",
+  "version": "3.3.0.0",
+  "sha256": "47c21e778d8e8ebf657aa72fd30e189e71ffddb188660e9d09ca9062d7541791"
+ },
+ {
+  "name": "prettyprinter",
+  "version": "1.7.1",
+  "sha256": "5e6ea6903114fa118fcc359633dfb7ecddecb92c06c853d02a77b72b251f0b45"
+ },
+ {
+  "name": "prettyprinter-ansi-terminal",
+  "version": "1.1.3",
+  "sha256": "813739308ad6050620578994effe21058a170a341716acf52573fae42b5b1db3"
+ },
+ {
+  "name": "primitive",
+  "version": "0.9.1.0",
+  "sha256": "44b4de41813c7bc5db8a57f87c3612a069b65086946268ba165097252ebd3d76"
+ },
+ {
+  "name": "profunctors",
+  "version": "5.6.3",
+  "sha256": "b9c6f427368d2e811e4c48b59005218672458fd2f00a02cbefb8be9c751c0ef3"
+ },
+ {
+  "name": "protolude",
+  "version": "0.3.5",
+  "sha256": "c80a59429f5c8dd261b168cd2c55bbacd6ae6f5caa7f3bd2aaae632d77c40487"
+ },
+ {
+  "name": "quickcheck-io",
+  "version": "0.2.0",
+  "sha256": "fb779119d79fe08ff4d502fb6869a70c9a8d5fd8ae0959f605c3c937efd96422"
+ },
+ {
+  "name": "random",
+  "version": "1.3.1",
+  "sha256": "d840ac83f265b0cfa2a678f8ec78627eb50cf9be2f067c52c8a4239c29b71a35"
+ },
+ {
+  "name": "reflection",
+  "version": "2.1.9",
+  "sha256": "c6a7d5e41ad0ee1a05c660acf4fd34b21f38330eec165d246b7fffb398e59fb3"
+ },
+ {
+  "name": "regex-base",
+  "version": "0.94.0.3",
+  "sha256": "e8ca2dee598c790dd1c1c4359bdd1e495d9b881f5aa1f539c22f0dd5563747bf"
+ },
+ {
+  "name": "regex-tdfa",
+  "version": "1.3.2.5",
+  "sha256": "2e3dfb449a548484f7d3b4e2a1b1040b39be26c4f3182a47004dc5eddf028a78"
+ },
+ {
+  "name": "safe",
+  "version": "0.3.21",
+  "sha256": "2c81fea42bbe79ec488774043c1ec54f30efba059df9a4f3681ce83d85007f01"
+ },
+ {
+  "name": "scientific",
+  "version": "0.3.8.1",
+  "sha256": "ad3781be149dfc7936e62eb9c3ad78ded0e9985b4dae16d2f62d9ba957ccdcfe"
+ },
+ {
+  "name": "semialign",
+  "version": "1.3.1.1",
+  "sha256": "8ce1f72e7f259422c3af72996e2656ca4a5d69828cad9005ba571b9447607a08"
+ },
+ {
+  "name": "semigroupoids",
+  "version": "6.0.2",
+  "sha256": "e48258e49542245ef6c58d7f419a83d1d1ab91b013d92c3b5c8c7c048daaa12e"
+ },
+ {
+  "name": "semigroups",
+  "version": "0.20.1",
+  "sha256": "bf4c71224397c3777e6a79145f5c9c31d5a13f27548345e55138461d87348ffe"
+ },
+ {
+  "name": "serialise",
+  "version": "0.2.6.1",
+  "sha256": "63949799ffd10675ef70ea701c1eb63e618629b3b2f7b25f07c5a966e24e77f4"
+ },
+ {
+  "name": "sourcemap",
+  "version": "0.1.7",
+  "sha256": "50645eb9707ce73fea8c4f43d86e6dcf5bfad01960b1e4bd2ad1d10f2b202326"
+ },
+ {
+  "name": "split",
+  "version": "0.2.5",
+  "sha256": "52da404e8397c1ab238354c8d4fd9a7e9c5cac8849cc2ce2e45facc85e74a913"
+ },
+ {
+  "name": "splitmix",
+  "version": "0.1.3.2",
+  "sha256": "a61d4e8b30f5a16526d7d31171b674ae7924d2207f378060d13363bd8794de8c"
+ },
+ {
+  "name": "strict",
+  "version": "0.5.1",
+  "sha256": "77719280c2a86312e748227bfa732eeaae0e7df48d57acc3c2e5b7b07afe2f8b"
+ },
+ {
+  "name": "stringsearch",
+  "version": "0.3.6.6",
+  "sha256": "295f1971920bc52263d8275d7054ad223a7e1aefe75533f9887735c9644ffe4a"
+ },
+ {
+  "name": "syb",
+  "version": "0.7.4",
+  "sha256": "ddcaca983f67a170c0cfdbd037a268779880e2f9b57f93135eaccb6ae4c5da3f"
+ },
+ {
+  "name": "tagged",
+  "version": "0.8.10",
+  "sha256": "17ef791eb4caf314a3b4b158827a0f1f4b695c2a24af0875f09e3d8c10f56c5d"
+ },
+ {
+  "name": "tagsoup",
+  "version": "0.14.8",
+  "sha256": "ba7e5500d853d29f0675b90655b7fdd032a4a7eee82a56e7ee3ef9949fe93ad5"
+ },
+ {
+  "name": "tasty",
+  "version": "1.5.4",
+  "sha256": "c76120141bd61c4418b3ed5efc5fe3094186d47cfe12d7be552320139f52c6c7"
+ },
+ {
+  "name": "tasty-hunit",
+  "version": "0.10.2",
+  "sha256": "5af01fa7c1ef98b324da062e36f79986a8b1b83ff0cf6fd53f95d976b41e03f6"
+ },
+ {
+  "name": "tasty-quickcheck",
+  "version": "0.11.1",
+  "sha256": "e3d4de7455ed342f8874d84686def897b8a316ce198461da18106d8a1f63246a"
+ },
+ {
+  "name": "text-iso8601",
+  "version": "0.1.1.1",
+  "sha256": "603b68d1135e9373edf2c20a993ea226b9f1fec11189c1b2b8a647262ceb8b3e"
+ },
+ {
+  "name": "text-short",
+  "version": "0.1.6.1",
+  "sha256": "83669f402354274fbcdc75126443af733267b955e451f72c0c6d86ae8da87416"
+ },
+ {
+  "name": "th-abstraction",
+  "version": "0.7.2.0",
+  "sha256": "946654bcd8ea2dff7d0058061861a8c898be9addf20c92d3cfa53b679e737622"
+ },
+ {
+  "name": "th-compat",
+  "version": "0.1.7",
+  "sha256": "9e26f12230d38ae56dcf94f8c139799dc3b7376f3434d35ce74847a0a24fd5ff"
+ },
+ {
+  "name": "these",
+  "version": "1.2.1",
+  "sha256": "17d6d933365edabf801a16842c1403bdd37cc5300faa2fcca980decdab22e4de"
+ },
+ {
+  "name": "time-compat",
+  "version": "1.9.9",
+  "sha256": "90fadded53cf9c15855eebf809e9536af8f85d00e32b82f7c8b506d2fadf7c25"
+ },
+ {
+  "name": "transformers-base",
+  "version": "0.4.6.1",
+  "sha256": "b43de3b3b9d658d504e8a0309356602ddc53c8dad3fdbbc3359abcb5439b41d8"
+ },
+ {
+  "name": "transformers-compat",
+  "version": "0.8",
+  "sha256": "f05c2145ee8d77ed773908d27a77c7f8be4d9419af90a757076b799c4a194da8"
+ },
+ {
+  "name": "typed-process",
+  "version": "0.2.13.0",
+  "sha256": "9400966013b541df2e54ac8d57c3a670fc28bde2be87767ce98f13bbe2aa43a0"
+ },
+ {
+  "name": "unbounded-delays",
+  "version": "0.1.1.1",
+  "sha256": "59ad7e53bfe32ffbf0e703b31490d41d14c70e4745ed49e8adf592ed68dd6185"
+ },
+ {
+  "name": "uniplate",
+  "version": "1.6.13",
+  "sha256": "e777c94628445556a71f135a42cf72d2cfbaccba5849cc42fbfec8b2182e3ad2"
+ },
+ {
+  "name": "unliftio-core",
+  "version": "0.2.1.0",
+  "sha256": "99384cba8d56d9d61b85e38a313a93ebcdb78be6566367f0930ef580597fe3e3"
+ },
+ {
+  "name": "unordered-containers",
+  "version": "0.2.21",
+  "sha256": "3b2ad1522b546e61960153257d1e5d239eeec5e83da847d5cb4d896a5bb7f9c0"
+ },
+ {
+  "name": "utf8-string",
+  "version": "1.0.2",
+  "sha256": "ee48deada7600370728c4156cb002441de770d0121ae33a68139a9ed9c19b09a"
+ },
+ {
+  "name": "uuid-types",
+  "version": "1.0.6.1",
+  "sha256": "9f00f278b9711104b6acc1404d9f0d45c1183b4987cf9c07403bebc05c0c3024"
+ },
+ {
+  "name": "vector",
+  "version": "0.13.2.0",
+  "sha256": "28f203c786cbf8ac6dc3fea3378ec36f34173d505fb4a1dd60fc8418ad91c423"
+ },
+ {
+  "name": "vector-stream",
+  "version": "0.1.0.1",
+  "sha256": "d0f507334bdea5431a2f07f525a97f29e76522c32210f5de6d5a2b4f1d42bf7c"
+ },
+ {
+  "name": "void",
+  "version": "0.7.4",
+  "sha256": "61ff790961edb34fd653e62f9f37020792f416f329b12e87549169e7f624fdf9"
+ },
+ {
+  "name": "witherable",
+  "version": "0.5",
+  "sha256": "48434cc1e465b13cbc0133a90c3ec0d827c93b77ce95807fe0a38b65f4918cd1"
+ },
+ {
+  "name": "xss-sanitize",
+  "version": "0.3.7.2",
+  "sha256": "1bbb7f5be1f4590124c76458fb798bfd9bf8114dce338d5881ad89188a9dc946"
+ }
+]

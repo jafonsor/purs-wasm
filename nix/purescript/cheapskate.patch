@@ -1,0 +1,10 @@
+--- a/Cheapskate/Parse.hs
++++ b/Cheapskate/Parse.hs
+@@ -17,6 +17,7 @@
+ import Data.Sequence ((|>), viewr, ViewR(..), singleton, Seq)
+ import qualified Data.Sequence as Seq
+ import Control.Monad.RWS
++import Control.Monad
+ import Control.Applicative
+ import qualified Data.Map as M
+ import Data.List (intercalate)

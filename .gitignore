@@ -1,0 +1,12 @@
+result
+result-*
+/ghc-wasm-native
+/ghc-wasm-native-pruned
+/purs-core-wasm
+/purs-core-wasm-from-pruned
+/pruned-smoke
+/pruned-same-wasm
+/release-assets
+/dist
+plan.txt
+notes.md

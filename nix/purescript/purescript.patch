@@ -1,0 +1,152 @@
+diff --git a/purescript.cabal b/purescript.cabal
+index 0a36e8c..2758403 100644
+--- a/purescript.cabal
++++ b/purescript.cabal
+@@ -166,7 +166,6 @@ common defaults
+     cheapskate >=0.1.1.2 && <0.2,
+     clock >=0.8.4 && <0.9,
+     containers >=0.6.8 && <0.7,
+-    cryptonite >=0.30 && <0.31,
+     data-ordlist >=0.4.7.0 && <0.5,
+     deepseq >=1.5.1.0 && <1.6,
+     directory >=1.3.8.5 && <1.4,
+@@ -180,9 +179,7 @@ common defaults
+     lens >=5.3.4 && <5.4,
+     lifted-async >=0.10.2.7 && <0.11,
+     lifted-base >=0.2.3.12 && <0.3,
+-    memory >=0.18.0 && <0.19,
+     monad-control >=1.0.3.1 && <1.1,
+-    monad-logger >=0.3.42 && <0.4,
+     monoidal-containers >=0.6.6.0 && <0.7,
+     mtl >=2.3.1 && <2.4,
+     parallel >=3.2.2.0 && <3.3,
+@@ -296,42 +293,14 @@ library
+     Language.PureScript.Glob
+     Language.PureScript.Graph
+     Language.PureScript.Hierarchy
+-    Language.PureScript.Ide
+-    Language.PureScript.Ide.CaseSplit
+-    Language.PureScript.Ide.Command
+-    Language.PureScript.Ide.Completion
+-    Language.PureScript.Ide.Error
+-    Language.PureScript.Ide.Externs
+-    Language.PureScript.Ide.Filter
+-    Language.PureScript.Ide.Filter.Declaration
+-    Language.PureScript.Ide.Filter.Imports
+-    Language.PureScript.Ide.Imports
+-    Language.PureScript.Ide.Imports.Actions
+-    Language.PureScript.Ide.Logging
+-    Language.PureScript.Ide.Matcher
+-    Language.PureScript.Ide.Prim
+-    Language.PureScript.Ide.Rebuild
+-    Language.PureScript.Ide.Reexports
+-    Language.PureScript.Ide.SourceFile
+-    Language.PureScript.Ide.State
+-    Language.PureScript.Ide.Types
+-    Language.PureScript.Ide.Usage
+-    Language.PureScript.Ide.Util
+-    Language.PureScript.Interactive
+-    Language.PureScript.Interactive.Completion
+-    Language.PureScript.Interactive.Directive
+-    Language.PureScript.Interactive.IO
+-    Language.PureScript.Interactive.Message
+-    Language.PureScript.Interactive.Module
+-    Language.PureScript.Interactive.Parser
+-    Language.PureScript.Interactive.Printer
+-    Language.PureScript.Interactive.Types
+     Language.PureScript.Label
+     Language.PureScript.Linter
+     Language.PureScript.Linter.Exhaustive
+     Language.PureScript.Linter.Imports
+     Language.PureScript.Linter.Wildcards
+     Language.PureScript.Make
++    Language.PureScript.Publish.BoxesHelpers
++    Language.PureScript.Publish.Registry.Compat
+     Language.PureScript.Make.Actions
+     Language.PureScript.Make.BuildPlan
+     Language.PureScript.Make.Cache
+@@ -344,11 +313,6 @@ library
+     Language.PureScript.Pretty.Types
+     Language.PureScript.Pretty.Values
+     Language.PureScript.PSString
+-    Language.PureScript.Publish
+-    Language.PureScript.Publish.BoxesHelpers
+-    Language.PureScript.Publish.ErrorsWarnings
+-    Language.PureScript.Publish.Registry.Compat
+-    Language.PureScript.Publish.Utils
+     Language.PureScript.Renamer
+     Language.PureScript.Roles
+     Language.PureScript.Sugar
+@@ -395,8 +359,14 @@ library
+     Paths_purescript
+   autogen-modules:
+     Paths_purescript
+-  build-tool-depends:
+-    happy:happy ==2.0.2
++
++executable purs-core
++  import: defaults
++  hs-source-dirs: app-core
++  main-is: Main.hs
++  ghc-options: -Wno-unused-packages -Wno-missing-deriving-strategies
++  build-depends:
++    purescript
+ 
+ executable purs
+   import: defaults
+diff --git a/src/Language/PureScript/Make/Cache.hs b/src/Language/PureScript/Make/Cache.hs
+index 092544f..b012133 100644
+--- a/src/Language/PureScript/Make/Cache.hs
++++ b/src/Language/PureScript/Make/Cache.hs
+@@ -12,11 +12,8 @@ import Prelude
+ 
+ import Control.Category ((>>>))
+ import Control.Monad ((>=>))
+-import Crypto.Hash (HashAlgorithm, Digest, SHA512)
+-import Crypto.Hash qualified as Hash
+ import Data.Aeson qualified as Aeson
+ import Data.Align (align)
+-import Data.ByteArray.Encoding (Base(Base16), convertToBase, convertFromBase)
+ import Data.ByteString qualified as BS
+ import Data.Map (Map)
+ import Data.Map qualified as Map
+@@ -32,34 +29,19 @@ import System.FilePath qualified as FilePath
+ 
+ import Language.PureScript.Names (ModuleName)
+ 
+-digestToHex :: Digest a -> Text
+-digestToHex = decodeUtf8 . convertToBase Base16
+-
+-digestFromHex :: forall a. HashAlgorithm a => Text -> Maybe (Digest a)
+-digestFromHex =
+-  encodeUtf8
+-  >>> either (const Nothing) Just . convertFromBase Base16
+-  >=> (Hash.digestFromByteString :: BS.ByteString -> Maybe (Digest a))
+-
+--- | Defines the hash algorithm we use for cache invalidation of input files.
+ newtype ContentHash = ContentHash
+-  { unContentHash :: Digest SHA512 }
++  { unContentHash :: BS.ByteString }
+   deriving (Show, Eq, Ord)
+ 
+ instance Aeson.ToJSON ContentHash where
+-  toJSON = Aeson.toJSON . digestToHex . unContentHash
++  toJSON = Aeson.toJSON . decodeUtf8 . unContentHash
+ 
+ instance Aeson.FromJSON ContentHash where
+-  parseJSON x = do
+-    str <- Aeson.parseJSON x
+-    case digestFromHex str of
+-      Just digest ->
+-        pure $ ContentHash digest
+-      Nothing ->
+-        fail "Unable to decode ContentHash"
++  parseJSON = fmap (ContentHash . encodeUtf8) . Aeson.parseJSON
++
+ 
+ hash :: BS.ByteString -> ContentHash
+-hash = ContentHash . Hash.hash
++hash = ContentHash
+ 
+ type CacheDb = Map ModuleName CacheInfo
+ 
