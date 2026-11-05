@@ -33,7 +33,7 @@ pin the sha256 of a release asset, they do not rebuild and compare.
 
 ```nix
 purs-core-wasm = pkgs.fetchurl {
-  url = "https://github.com/OWNER/purs-wasm/releases/download/v0.15.16-1/purs-core.wasm";
+  url = "https://github.com/jafonsor/purs-wasm/releases/download/v0.15.16-1/purs-core.wasm";
   hash = "sha256-...";   # sha256 of the asset, as SRI: nix hash convert --hash-algo sha256 --to sri <hex>
 };
 ```
@@ -41,7 +41,7 @@ purs-core-wasm = pkgs.fetchurl {
 Get the hash from `purs-core.wasm.sha256` (hex) or from `BUILDINFO.json`. Without Nix:
 
 ```sh
-curl -fLO https://github.com/OWNER/purs-wasm/releases/download/v0.15.16-1/purs-core.wasm
+curl -fLO https://github.com/jafonsor/purs-wasm/releases/download/v0.15.16-1/purs-core.wasm
 echo "<hex>  purs-core.wasm" | sha256sum -c
 node test/smoke.mjs purs-core.wasm      # from this repo: compiles a module, checks the JavaScript
 ```
@@ -49,7 +49,7 @@ node test/smoke.mjs purs-core.wasm      # from this repo: compiles a module, che
 ## For a developer: the pruned GHC
 
 ```sh
-mkdir ghc && curl -fL https://github.com/OWNER/purs-wasm/releases/download/v0.15.16-1/ghc-wasm-native-x86_64-linux.tar.xz | tar -C ghc -xJ
+mkdir ghc && curl -fL https://github.com/jafonsor/purs-wasm/releases/download/v0.15.16-1/ghc-wasm-native-x86_64-linux.tar.xz | tar -C ghc -xJ
 export PATH=$PWD/ghc/bin:$PATH
 wasm32-wasi-ghc --version
 ```
@@ -59,7 +59,7 @@ wasm32-wasi-ghc --version
 - `lib/settings` hard-codes the store path of the wasi-sdk (the haskell-wasm fork of it: its `wasm-ld`
   carries a patch GHC needs for Template Haskell). GHC has no variable for this. The wasi-sdk therefore
   has to exist at that exact `/nix/store/...-wasi-sdk` path: on a machine with Nix,
-  `nix build github:OWNER/purs-wasm#wasi-sdk` (same flake.lock) puts it there. Anywhere else, run
+  `nix build github:jafonsor/purs-wasm#wasi-sdk` (same flake.lock) puts it there. Anywhere else, run
   `bin/ghc-wasm-native-set-wasi-sdk /path/to/the/fork` once; this rewrites the path in `lib/settings`
   (untested outside Nix).
 - The wrappers in `bin/` also point at `node` and at the npm packages Template Haskell needs, by store
@@ -69,7 +69,7 @@ wasm32-wasi-ghc --version
 
 So the tarball helps people who have Nix (or can copy the store paths) and want to skip building GHC.
 Making it truly portable (patchelf, bundling the wasi-sdk) is not done. Nix users should prefer
-`nix build github:OWNER/purs-wasm#ghc-wasm-native-pruned` (fetched from the binary cache if you have it,
+`nix build github:jafonsor/purs-wasm#ghc-wasm-native-pruned` (fetched from the binary cache if you have it,
 otherwise built).
 
 ## What the pruning does
