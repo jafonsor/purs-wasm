@@ -37,7 +37,7 @@ in
 
 pkgs.runCommand "ghc-wasm-native-pruned-${ghc.version}"
 {
-  nativeBuildInputs = [ pkgs.findutils pkgs.coreutils pkgs.gnugrep pkgs.gnused ];
+  nativeBuildInputs = [ pkgs.findutils pkgs.coreutils pkgs.gnugrep pkgs.gnused pkgs.patchelf ];
   # Cheap, but copying 3.4 GB: not worth substituting from anywhere else.
   allowSubstitutes = false;
   inherit (ghc) version;
@@ -56,6 +56,17 @@ pkgs.runCommand "ghc-wasm-native-pruned-${ghc.version}"
   find . -type l -lname '${ghc}/*' | while read -r l; do
     t=$(readlink "$l")
     ln -sfn "$out/''${t#${ghc}/}" "$l"
+  done
+
+  # ---- host binaries: the linker put the full install's lib directory into
+  # their RPATH (stdenv's self-rpath; dontFixup keeps it). Point it at this
+  # output instead, or the closure would drag in the whole 3.4 GB install.
+  # Done first, so binaries that only differed in it can be deduplicated.
+  { grep -rlF '${ghc}' . || true; } | while read -r f; do
+    if rp=$(patchelf --print-rpath "$f" 2>/dev/null) && [[ "$rp" == *'${ghc}'* ]]; then
+      echo "rpath fix: $f: $rp"
+      patchelf --set-rpath "''${rp//'${ghc}'/$out}" "$f"
+    fi
   done
 
   # ---- documentation
@@ -142,9 +153,19 @@ pkgs.runCommand "ghc-wasm-native-pruned-${ghc.version}"
   chmod +x bin/ghc-wasm-native-set-wasi-sdk
 
   # ---- the output must be independent of the full install
-  if grep -rIl '${ghc}' . ; then echo "text files above still name the full install"; exit 1; fi
-  if grep -rl '${ghc}' . ; then echo "binary files above still name the full install"; exit 1; fi
-  find . -xtype l | while read -r l; do echo "dangling symlink $l"; exit 1; done
+  leaks=$(grep -rlF '${ghc}' . || true)
+  if [ -n "$leaks" ]; then
+    echo "files that still name the full install (${ghc}):"
+    for f in $leaks; do
+      echo "== $f"
+      echo "   rpath: $(patchelf --print-rpath "$f" 2>&1 | head -c 300)"
+      echo "   store paths in it:"
+      grep -a -o '/nix/store/[a-z0-9]\{32\}-[A-Za-z0-9._+-]*' "$f" | sort | uniq -c | sort -rn | head -8
+    done
+    exit 1
+  fi
+  dangling=$(find . -xtype l)
+  if [ -n "$dangling" ]; then echo "dangling symlinks: $dangling"; exit 1; fi
 
   echo "pruned install: $(size) MB"
 ''
